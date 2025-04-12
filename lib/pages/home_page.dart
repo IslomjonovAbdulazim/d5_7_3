@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,8 +22,28 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   Expanded(
-                    child: TextField(
-
+                    child: SizedBox(
+                      height: 48,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          hintText: "Search",
+                          hintStyle: TextStyle(
+                            color: Color(0xffCCCCCC),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Color(0xff0D0D0D),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(width: 20),
@@ -35,6 +56,37 @@ class _HomePageState extends State<HomePage> {
               ),
 
               // Brands
+              SizedBox(height: 20),
+              Row(
+                children: [
+                  Text(
+                    "Brands",
+                    style: TextStyle(
+                      color: Color(0xff0D0D0D),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Spacer(),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Text(
+                          "See all",
+                          style: TextStyle(
+                            color: Color(0xff0D0D0D),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(width: 3),
+                        Icon(CupertinoIcons.chevron_right, size: 16),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
 
               // Popular Cars
             ],
